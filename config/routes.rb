@@ -1,4 +1,14 @@
 Ricette::Application.routes.draw do
+  get "projects/index"
+
+  get "project/index"
+
+  get "project/edit"
+
+  get "project/save"
+
+  get "project/delete"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
