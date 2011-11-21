@@ -1,0 +1,35 @@
+
+$width: 500px;
+
+#projects {
+  ul {
+    li {
+      border: 1px solid #000;
+      width: $width;
+      min-height: 120px;
+      margin: 3px;
+      list-style-type: none;
+
+      .title {
+        width: $width * 0.8;
+        background: #ddd;
+        padding: 2px 0px 2px 10px;
+        float: left;
+      }
+
+      .velocity {
+        font-family: 'Kelly Slab', cursive;
+        float: right;
+        width: $width * 0.15;
+        font-size: 48px;
+        text-align: right;
+      }
+
+      .description {
+        clear: both;
+        padding: 2px;
+        width: $width * 0.9;
+      }
+    }
+  }
+}

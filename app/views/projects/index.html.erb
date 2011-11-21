@@ -1,3 +1,13 @@
-<h1>Ricette</h1>
+<h2>Projects</h2>
 
-<%= @projects.each{|project| project.title } %>
+<div id="projects">
+    <ul>
+    <% @projects.each do |project| %>
+        <li>
+          <h3 class="title"><%= project.title  %></h3>
+          <div class="velocity"><%= project.velocity %></div>
+          <div class="description"><%= project.description %></div>
+        </li>
+    <% end %>
+    </ul>
+</div>
