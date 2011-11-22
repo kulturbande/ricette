@@ -1,18 +1,15 @@
-<header>
-    <div class="wrapper">
-        <h1>Ricette</h1>
-    </div>
-</header>
+<%= title "Projects" %>
+
 <section class="wrapper">
-<div id="projects">
-    <ul>
-    <% @projects.each do |project| %>
-        <li>
-          <h3 class="title"><%= project.title  %></h3>
-          <div class="velocity"><%= project.velocity %></div>
-          <div class="description"><%= project.description %></div>
-        </li>
-    <% end %>
-    </ul>
-</div>
+  <div id="projects">
+      <ul>
+      <% @projects.each do |project| %>
+          <li>
+            <h3 class="title"><%= project.title  %></h3>
+            <div class="velocity"><%= project.velocity %></div>
+            <div class="description"><%= project.description %></div>
+          </li>
+      <% end %>
+      </ul>
+  </div>
 </section>
