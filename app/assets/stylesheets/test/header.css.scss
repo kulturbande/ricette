@@ -1,7 +1,10 @@
+@import "grid";
+
 $background-color: #205791;
 $text-color: #fff;
 
 header {
+  @include column(12);
 
   h1 {
     color: $text-color;

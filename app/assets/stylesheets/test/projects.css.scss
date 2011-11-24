@@ -1,0 +1,30 @@
+
+
+
+
+ul#projects {
+    li {
+      border: 1px solid #000;
+      min-height: 120px;
+      margin: 3px;
+      list-style-type: none;
+
+      .title {
+        background: #ddd;
+        padding: 2px 0px 2px 10px;
+        float: left;
+      }
+
+      .velocity {
+        font-family: 'Kelly Slab', cursive;
+        float: right;
+        font-size: 48px;
+        text-align: right;
+      }
+
+      .description {
+        clear: both;
+        padding: 2px;
+      }
+    }
+}
