@@ -5,6 +5,8 @@
 
 -------------------------------------------------------------- */
 
+@import url(http://fonts.googleapis.com/css?family=Tenor+Sans);
+
 /* Default font settings.
    The font-size percentage is of 16px. (0.75 * 16px = 12px) */
 html { font-size:100.01%; }
@@ -12,7 +14,7 @@ body {
   font-size: 75%;
   color: #222;
   background: #fff;
-  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: 'Tenor Sans', "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
 

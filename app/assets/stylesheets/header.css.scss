@@ -1,12 +1,14 @@
+@import "grid";
+
 $background-color: #205791;
 $text-color: #fff;
 
-header {
-
+header#header {
+  @include column(12);
   h1 {
     color: $text-color;
-    /* font-size: $text-size * 1.5;  */
     background: $background-color;
+    padding-left: 20px;
   }
 
 }
