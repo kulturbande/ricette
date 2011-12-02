@@ -3,11 +3,16 @@
 <section>
       <ul id="projects">
       <% @projects.each do |project| %>
-          <li>
+          <li class="project-<%= project.id %>">
             <h3 class="title"><%= project.title  %></h3>
             <div class="velocity"><%= project.velocity %></div>
             <div class="description"><%= project.description %></div>
+            <div class="action">
+              <%= link_to "Edit", {:action => 'edit'}, :remote => true %>
+            </div>
           </li>
       <% end %>
       </ul>
 </section>
+
+<%# http://www.alfajango.com/blog/rails-3-remote-links-and-forms/  %>

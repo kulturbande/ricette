@@ -4,4 +4,8 @@ class ProjectsController < ApplicationController
     @projects = Project.all
   end
 
+  def edit
+
+  end
+
 end
