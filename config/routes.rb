@@ -1,17 +1,9 @@
 Ricette::Application.routes.draw do
-  get "projects/index"
-  get "projects/create"
-  get "projects/edit"
 
-  resources :projects
-  #
-  #get "project/index"
-  #
-  #get "project/edit"
-  #
-  #get "project/save"
-  #
-  #get "project/delete"
+  resources :projects #, :only => [:index, :update, :destroy, :create]
+
+  #match 'projects' => 'projects#index'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -63,6 +55,8 @@ Ricette::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
+
+  root :to => 'projects#index'
 
   # See how all your routes lay out with "rake routes"
 

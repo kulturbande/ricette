@@ -1,0 +1,9 @@
+<li class="project-form">
+<%= form_for(@project) do |f| %>
+    <h3 class="title"><%= f.text_field :title %></h3>
+    <div class="description"><%= f.text_area :description %></div>
+    <div class="action">
+      <%# link_to "Close", {}, {:class => "close-form"} %>
+    </div>
+<% end %>
+</li>

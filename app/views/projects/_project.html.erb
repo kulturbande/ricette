@@ -3,7 +3,7 @@
     <div class="velocity"><%= project.velocity %></div>
     <div class="description"><%= project.description %></div>
     <div class="action">
-      <%# link_to "Edit", {:action => 'edit', :id => project.id}, :remote => true %>
-      <%= link_to "Edit",{}, {:class => "switch"} %>
+      <%= link_to "Edit", edit_project_path(project), :remote => true %>
+      <%# hidden_field :update_path, project.id, {:value => project_path(project), :class => "update-path"} %>
     </div>
 </li>
