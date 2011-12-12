@@ -1,18 +1,21 @@
 <% title "Projects" %>
 
 <section>
-      <ul id="projects">
-      <% @projects.each do |project| %>
-          <li class="project-<%= project.id %>">
-            <h3 class="title"><%= project.title  %></h3>
-            <div class="velocity"><%= project.velocity %></div>
-            <div class="description"><%= project.description %></div>
-            <div class="action">
-              <%= link_to "Edit", {:action => 'edit'}, :remote => true %>
-            </div>
-          </li>
-      <% end %>
-      </ul>
+  <ul id="projects">
+  <% @projects.each do |project| %>
+    <%= render project %>
+  <% end %>
+  </ul>
 </section>
 
-<%# http://www.alfajango.com/blog/rails-3-remote-links-and-forms/  %>
+<script id="project-form-template" type="text/x-handlebars-template">
+  <li class="project-form">
+    <%= form_for(Project.new) do |f| %>
+        <h3 class="title"><%= f.text_field :title, :value => "{{title}}" %></h3>
+        <div class="description"><%= f.text_area :description, :value => "{{description}}" %></div>
+        <div class="action">
+          <%= link_to "Close", {}, {:class => "close-form"}  %>
+        </div>
+    <% end %>
+  </li>
+</script>

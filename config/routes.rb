@@ -1,6 +1,9 @@
 Ricette::Application.routes.draw do
   get "projects/index"
+  get "projects/create"
   get "projects/edit"
+
+  resources :projects
   #
   #get "project/index"
   #
