@@ -6,16 +6,5 @@
     <%= render project %>
   <% end %>
   </ul>
+  <%= link_to "Create new project", new_project_path, :remote => true, :class => "create-project" %>
 </section>
-
-<script id="project-form-template" type="text/x-handlebars-template">
-  <li class="project-form">
-    <%= form_for(Project.new, :url => "{{url}}") do |f| %>
-        <h3 class="title"><%= f.text_field :title, :value => "{{title}}" %></h3>
-        <div class="description"><%= f.text_area :description, :value => "{{description}}" %></div>
-        <div class="action">
-          <%= link_to "Close", {}, {:class => "close-form"}  %>
-        </div>
-    <% end %>
-  </li>
-</script>

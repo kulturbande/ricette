@@ -7,11 +7,20 @@ class ProjectsController < ApplicationController
 
   def edit
     @project = Project.find(params[:id])
-    respond_with @project, :location => projects_url
+  end
+
+  def new
+    @project = Project.new
   end
 
   def create
+    @project = Project.new(params[:project])
+    if @project.save
+      flash[:notice] = "Project created!"
 
+    else
+
+    end
   end
 
   def update
@@ -25,6 +34,8 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-
+    flash[:notice] = "Project deleted!"
+    @project = Project.find(params[:id])
+    @project.destroy
   end
 end
