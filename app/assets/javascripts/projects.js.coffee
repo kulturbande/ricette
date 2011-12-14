@@ -37,9 +37,8 @@
 #    project_form = new ProjectForm($(@).parents("li"))
 #    project_form.replace()
 
-cleanProjectsView ->
-  $(".project-form").remove()
-  $("li").show()
+
+
 
 
 

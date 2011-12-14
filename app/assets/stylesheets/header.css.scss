@@ -11,4 +11,16 @@ header#header {
     padding-left: 20px;
   }
 
+  #ajax-status {
+    width: 120px;
+    z-index: 2;
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    color: $text-color;
+    background: $background-color;
+    padding: 3px;
+    text-align: center;
+    display:none;
+  }
 }
