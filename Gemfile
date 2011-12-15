@@ -32,7 +32,15 @@ gem 'therubyracer'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+
+
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
+  gem 'test-unit'
+  #gem 'autotest'
+  #gem 'autotest-rails-pure'
+  #gem 'autotest-notification'
+  #gem 'autotest-standalone'
+  #gem 'autotest-growl'
 end
