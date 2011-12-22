@@ -9,6 +9,10 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 
+  def show
+    redirect_to projects_url
+  end
+
   def new
     @project = Project.new
   end
@@ -17,9 +21,6 @@ class ProjectsController < ApplicationController
     @project = Project.new(params[:project])
     if @project.save
       flash[:notice] = "Project created!"
-
-    else
-
     end
   end
 
@@ -27,9 +28,6 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     if @project.update_attributes(params[:project])
       flash[:notice] = "Project updated!"
-
-    else
-      render :json => @club.errors, :status => :unprocessable_entity
     end
   end
 

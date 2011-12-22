@@ -4,3 +4,9 @@ div.center {
     margin: 0 auto;
     width: $total-width;
 }
+
+div.field_with_errors {
+     input, textarea {
+        border-color: #F00;
+     }
+}
