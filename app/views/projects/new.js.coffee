@@ -4,9 +4,8 @@
 
 form = "<%= escape_javascript(render(:partial => 'form', :locals => { :project => @project }))%>"
 $("ul#projects li:last").after form
-$(".create-project").hide()
+create_form = $(".create-project")
+create_form.hide()
 
-$(".project-form .close-form").click (event) ->
-  event.preventDefault()
-  $(@).parents("li").remove()
-  $(".create-project").show()
+project = new Project()
+project.add_close_button(create_form)

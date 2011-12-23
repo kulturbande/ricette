@@ -10,8 +10,8 @@ form = "<%= escape_javascript(render(:partial => 'form', :locals => { :project =
 replacement.after form
 replacement.hide()
 
-$(".project-form .close-form").click (event) ->
-  event.preventDefault()
-  $(@).parents("li").remove()
-  replacement.show()
+project = new Project()
+project.add_close_link(replacement)
+
+
 

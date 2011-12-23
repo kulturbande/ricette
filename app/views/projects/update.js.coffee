@@ -2,19 +2,19 @@
 # Date: 13.12.11
 # Time: 21:21
 
+replacment = $(".project-<%= @project.id %>")
+project_form = $(".project-form")
+project = new Project()
+
 <% if @project.errors.any? %>
-  $(".project-form").remove()
-  $(".project-<%= @project.id %>").after "<%= escape_javascript(render(:partial => 'form', :locals => { :project => @project }))%>"
+  project_form.remove()
+  replacment.after "<%= escape_javascript(render(:partial => 'form', :locals => { :project => @project }))%>"
 
-  $(".project-form .close-form").click (event) ->
-    event.preventDefault()
-    $(@).parents("li").remove()
-    $(".project-<%= @project.id %>").show()
+  project.add_close_button(replacment)
 <% else %>
-  $("#notice").html('<div class="flash notice"><%=escape_javascript(flash.discard(:notice)) %></div>');
-  $("#notice .notice").delay(2000).fadeOut()
+  project.notice("<%=escape_javascript(flash.discard(:notice)) %>")
 
-  $(".project-<%= @project.id %>").remove()
-  $(".project-form").after "<%= escape_javascript(render(@project))%>"
-  $(".project-form").remove()
+  replacement.remove()
+  project_form.after "<%= escape_javascript(render(@project))%>"
+  project_form.remove()
 <% end %>
