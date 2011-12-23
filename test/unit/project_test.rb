@@ -6,6 +6,10 @@ class ProjectTest < ActiveSupport::TestCase
     @project = Project.new({:title => "test"})
   end
 
+  test "should be successful" do
+    assert @project.save, "normal save should be successful"
+  end
+
   test "should not save project without title" do
     project = Project.new
     assert !project.save, "need a title to save project"
