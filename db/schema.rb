@@ -11,12 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111119172606) do
+ActiveRecord::Schema.define(:version => 20111223235336) do
 
   create_table "projects", :force => true do |t|
     t.string   "title",       :limit => 100, :null => false
     t.text     "description"
     t.integer  "velocity",    :limit => 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_stories", :force => true do |t|
+    t.integer  "project_id"
+    t.text     "story"
+    t.integer  "velocity"
+    t.integer  "position"
+    t.string   "backlog"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
