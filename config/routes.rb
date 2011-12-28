@@ -1,6 +1,10 @@
 Ricette::Application.routes.draw do
 
-  resources :projects #, :only => [:index, :update, :destroy, :create]
+  #get "user_story/index"
+
+  resources :projects do
+    resources :user_stories
+  end
 
   #match 'projects' => 'projects#index'
 

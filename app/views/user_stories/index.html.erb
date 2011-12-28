@@ -1,0 +1,14 @@
+<% title "User Story - " + @project.title %>
+<%= render_navigation %>
+<section id="backlog">
+    <ul id="product">
+      <% @project.user_stories.product_backlog.each do |user_story| %>
+        <%= render user_story %>
+      <% end %>
+    </ul>
+    <ul id="current">
+      <% @project.user_stories.current_backlog.each do |user_story| %>
+        <%= render user_story %>
+      <% end %>
+    </ul>
+</section>

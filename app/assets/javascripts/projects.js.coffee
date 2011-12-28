@@ -9,10 +9,6 @@ window.Project = class Project
       $(@).parents("li").remove()
       replacement.show()
 
-  notice: (notice) ->
-    $("#notice").html('<div class="flash notice">'+notice+'</div>');
-    $("#notice .notice").delay(2000).fadeOut()
-
 
 
 

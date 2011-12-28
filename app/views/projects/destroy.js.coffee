@@ -2,6 +2,7 @@
 # Date: 14.12.11
 # Time: 11:55
 
+app = new App()
+
 $(".project-<%= params[:id] %>").remove()
-$("#notice").html('<div class="flash notice"><%=escape_javascript(flash.discard(:notice)) %></div>');
-$("#notice .notice").delay(2000).fadeOut()
+app.notice('<%=escape_javascript(flash.discard(:notice)) %>')

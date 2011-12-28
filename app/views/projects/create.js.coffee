@@ -4,6 +4,7 @@
 
 project_form = $(".project-form")
 project = new Project()
+app = new App()
 
 <% if @project.errors.any? %>
   project_form.remove()
@@ -12,7 +13,7 @@ project = new Project()
 
   project.add_close_button($(".create-project"))
 <% else %>
-  project.notice('<%=escape_javascript(flash.discard(:notice)) %>')
+  app.notice('<%=escape_javascript(flash.discard(:notice)) %>')
 
   project_form.after "<%= escape_javascript(render(@project))%>"
   project_form.remove()

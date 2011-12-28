@@ -5,6 +5,7 @@
 replacment = $(".project-<%= @project.id %>")
 project_form = $(".project-form")
 project = new Project()
+app = new App()
 
 <% if @project.errors.any? %>
   project_form.remove()
@@ -12,7 +13,7 @@ project = new Project()
 
   project.add_close_button(replacment)
 <% else %>
-  project.notice("<%=escape_javascript(flash.discard(:notice)) %>")
+  app.notice("<%=escape_javascript(flash.discard(:notice)) %>")
 
   replacement.remove()
   project_form.after "<%= escape_javascript(render(@project))%>"

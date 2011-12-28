@@ -24,8 +24,9 @@
         <h1>
           <%= yield :title %>
         </h1>
-        <div id="ajax-status">Loading...</div>
 
+        <div id="ajax-status">Loading...</div>
+        <%= yield :menu %>
       </header>
      <div id="notice"></div>
 <%= yield %>

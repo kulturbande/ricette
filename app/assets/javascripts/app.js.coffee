@@ -18,6 +18,10 @@ window.App = class App
       console.log "XHR Response: " + xhr
       $('#ajax-status').fadeOut()
 
+  notice: (notice) ->
+    $("#notice").html('<div class="flash notice">'+notice+'</div>');
+    $("#notice .notice").delay(2000).fadeOut()
+
 jQuery ->
   app = new App
   app.setupAjaxCallbacks()

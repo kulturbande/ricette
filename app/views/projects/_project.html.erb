@@ -5,5 +5,7 @@
     <div class="action">
       <%= link_to "Edit", edit_project_path(project), :remote => true %>
       <%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete, :remote => true %>
+      <br/><br/>
+      <%= link_to 'User Stories', project_user_stories_path(project) %>
     </div>
 </li>
