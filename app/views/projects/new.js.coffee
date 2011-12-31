@@ -7,5 +7,5 @@ $("ul#projects li:last").after form
 create_form = $(".create-project")
 create_form.hide()
 
-project = new Project()
-project.add_close_button(create_form)
+app = new App("project")
+app.add_close_link(create_form)

@@ -1,0 +1,17 @@
+<li class="user-story-form">
+  <%= form_for([@project, user_story], :remote => true) do |f| %>
+  <% if user_story.errors.any? %>
+    <ul>
+      <% user_story.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+    <div class="description"><%= f.text_area :story %></div>
+    <div class="action">
+      <%= f.submit %>
+      <%= link_to "Close", {}, {:class => "close-form"} %>
+    </div>
+<% end %>
+</li>

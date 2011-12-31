@@ -3,7 +3,8 @@
 # Time: 17:46
 
 window.App = class App
-  constructor: ->
+  constructor: (name)->
+    @name = name
 
   setupAjaxCallbacks: ->
     $("body").ajaxStart ->
@@ -22,6 +23,12 @@ window.App = class App
     $("#notice").html('<div class="flash notice">'+notice+'</div>');
     $("#notice .notice").delay(2000).fadeOut()
 
+  add_close_link: (replacement)->
+    $("."+@name+"-form .close-form").click (event) ->
+      event.preventDefault()
+      $(@).parents("li").remove()
+      replacement.show()
+
 jQuery ->
-  app = new App
+  app = new App("")
   app.setupAjaxCallbacks()

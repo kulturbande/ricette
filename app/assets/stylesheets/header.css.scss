@@ -23,4 +23,19 @@ header#header {
     text-align: center;
     display:none;
   }
+
+  #menu {
+    @include column(12);
+
+    ul {
+      @include row(12);
+      padding: 0;
+      li {
+        list-style-type: none;
+        @include column(3, 12);
+        //border: 1px solid #333;
+        padding: 0;
+      }
+    }
+  }
 }

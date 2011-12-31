@@ -10,8 +10,8 @@ form = "<%= escape_javascript(render(:partial => 'form', :locals => { :project =
 replacement.after form
 replacement.hide()
 
-project = new Project()
-project.add_close_link(replacement)
+app = new App("project")
+app.add_close_link(replacement)
 
 
 

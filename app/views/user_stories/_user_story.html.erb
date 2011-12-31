@@ -1,4 +1,7 @@
-<li>
-  <%= user_story.story+" 123" %>
-
+<li class="user-story-<%= user_story.id %>">
+  <div class="story"><%= user_story.story %></div>
+  <div class="action">
+      <%= link_to "Edit", edit_project_user_story_path(@project, user_story), :remote => true %>
+      <%= link_to 'Destroy', [@project, user_story], :confirm => 'Are you sure?', :method => :delete, :remote => true %>
+    </div>
 </li>

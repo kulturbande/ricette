@@ -4,11 +4,9 @@ ul#projects {
     @include column(9);
 
     li {
-
       border: 1px solid #000;
-      min-height: 120px;
       list-style-type: none;
-      margin: 2px 0px;
+      padding: 0;
 
       .title {
         background: #ddd;
