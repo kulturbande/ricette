@@ -10,3 +10,7 @@ div.field_with_errors {
         border-color: #F00;
      }
 }
+
+// infield labels
+form p { position:relative }
+label  { position:absolute; top:0; left:0}

@@ -1,6 +1,9 @@
 <% title "User Story - " + @project.title %>
 
 <section id="backlog">
+    <p class="inline-menu">
+      <%= link_to "Create new user story", new_project_user_story_path(@project), :remote => true, :class => "create-user-story" %>
+    </p>
     <ul id="product">
       <% @product_backlog.each do |user_story| %>
         <%= render user_story %>
@@ -11,5 +14,4 @@
         <%= render user_story %>
       <% end %>
     </ul>
-  <%= link_to "Create new user story", new_project_user_story_path(@project), :remote => true, :class => "create-user-story" %>
 </section>

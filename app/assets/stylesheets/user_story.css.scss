@@ -2,6 +2,11 @@
 
 section#backlog {
 
+    p.inline-menu {
+        @include column(12);
+
+    }
+
     ul{
         @include column(6);
         padding: 0;

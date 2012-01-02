@@ -8,10 +8,10 @@
     </ul>
   <% end %>
 
-    <div class="description"><%= f.text_area :story %></div>
-    <div class="action">
+    <p class="description"><%= f.label :story %><%= f.text_area :story %></p>
+    <p class="action">
       <%= f.submit %>
       <%= link_to "Close", {}, {:class => "close-form"} %>
-    </div>
+    </p>
 <% end %>
 </li>

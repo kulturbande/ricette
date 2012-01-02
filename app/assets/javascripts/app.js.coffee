@@ -23,6 +23,9 @@ window.App = class App
     $("#notice").html('<div class="flash notice">'+notice+'</div>');
     $("#notice .notice").delay(2000).fadeOut()
 
+  add_labels: ->
+    $("label").inFieldLabels()
+
   add_close_link: (replacement)->
     $("."+@name+"-form .close-form").click (event) ->
       event.preventDefault()
