@@ -3,7 +3,15 @@ require 'test_helper'
 class UserStoryTest < ActiveSupport::TestCase
 
   def setup
-    @user_story = UserStory.new({:story => "test", :backlog => "product"})
+    @project = Project.first
+    @user_story = @project.user_stories.new
+    @user_story.story = "test"
+    @user_story.backlog = "product"
+  end
+
+  test "should have a project id" do
+    @user_story.project_id = nil
+    assert !@user_story.save, "Can't save a user story with no project"
   end
 
   test "should be successful" do

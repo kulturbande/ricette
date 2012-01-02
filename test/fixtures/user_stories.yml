@@ -2,10 +2,12 @@
 
 one:
   project_id: 1
-  story: MyText
+  story: test
   velocity: 1
+  backlog: product
 
 two:
   project_id: 1
   story: MyText
   velocity: 1
+  backlog: current

@@ -11,12 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111223235336) do
+ActiveRecord::Schema.define(:version => 20120102102635) do
 
   create_table "projects", :force => true do |t|
     t.string   "title",       :limit => 100, :null => false
     t.text     "description"
     t.integer  "velocity",    :limit => 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tasks", :force => true do |t|
+    t.integer  "user_story_id"
+    t.string   "task"
+    t.integer  "velocity"
+    t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
