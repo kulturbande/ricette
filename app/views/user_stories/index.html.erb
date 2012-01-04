@@ -1,4 +1,4 @@
-<% title "User Story - " + @project.title %>
+<% title "User Stories - " + @project.title %>
 
 <section id="backlog">
     <p class="inline-menu">
@@ -10,7 +10,7 @@
       <% end %>
     </ul>
     <ul id="current">
-      <% @current_backlog.each do |user_story| %>
+      <% @sprint_backlog.each do |user_story| %>
         <%= render user_story %>
       <% end %>
     </ul>

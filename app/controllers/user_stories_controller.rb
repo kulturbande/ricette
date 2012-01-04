@@ -3,7 +3,7 @@ class UserStoriesController < ApplicationController
   before_filter :load_project
   def index
     @product_backlog = @project.user_stories.product_backlog
-    @current_backlog = @project.user_stories.current_backlog
+    @sprint_backlog = @project.user_stories.sprint_backlog
   end
 
   def edit

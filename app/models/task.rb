@@ -1,5 +1,5 @@
 class Task < ActiveRecord::Base
-  has_one :user_story
+  belongs_to :user_story
 
   validates_presence_of :task
   validates_presence_of :user_story_id

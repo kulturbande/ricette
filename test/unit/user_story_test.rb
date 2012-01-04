@@ -18,9 +18,9 @@ class UserStoryTest < ActiveSupport::TestCase
     assert @user_story.save, "normal save should be successful"
   end
 
-  test "backlog should be product or current" do
-    @user_story.backlog = "current"
-    assert @user_story.save, "can store user story with 'current' attribute"
+  test "backlog should be product or sprint" do
+    @user_story.backlog = "sprint"
+    assert @user_story.save, "can store user story with 'sprint' attribute"
     @user_story.backlog = "test"
     assert !@user_story.save, "other strings are not allowed"
   end

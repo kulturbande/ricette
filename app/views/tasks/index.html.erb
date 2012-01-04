@@ -1,0 +1,7 @@
+<% title "Tasks - " + @project.title %>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <li><%= task.task %></li>
+  <% end %>
+</ul>
