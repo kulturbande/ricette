@@ -17,26 +17,27 @@
    <!--[if lt IE 9]>
         <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
    <![endif]-->
-    <!--[if lte IE 6]>
-        <style type="text/css" media="screen">
-            form label {
-                    background: #fff;
-            }
-        </style>
-    <![endif]-->
 </head>
 <body lang="en">
-  <div class="center">
-      <header id="header">
-        <h1>
-          <%= yield :title %>
-        </h1>
-
-        <div id="ajax-status">Loading...</div>
-        <div id="menu"><%= render_navigation %></div>
-      </header>
-     <div id="notice"></div>
-<%= yield %>
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="container-fluid">
+      <a class="brand" href="/">Ricette</a>
+      <%= render_navigation %>
+      <p class="pull-right">
+      <span id="ajax-status">Loading...</span><!-- Logged in as <a href="#">username</a> -->
+      </p>
+    </div>
   </div>
+</div>
+
+
+
+<%# yield :title %><!-- <div id="notice"></div> -->
+<div class="container-fluid">
+  <div class="content">
+    <%= yield %>
+  </div>
+</div>
 </body>
 </html>

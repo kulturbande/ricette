@@ -27,9 +27,10 @@ window.App = class App
     $("label").inFieldLabels()
 
   add_close_link: (replacement)->
+    element = "."+@name+"-form"
     $("."+@name+"-form .close-form").click (event) ->
       event.preventDefault()
-      $(@).parents("li").remove()
+      $(element).remove()
       replacement.show()
 
 jQuery ->

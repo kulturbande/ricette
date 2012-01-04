@@ -1,11 +1,24 @@
-<li class="project-<%= project.id %>">
-    <h3 class="title"><%= project.title  %></h3>
-    <div class="velocity"><%= project.velocity %></div>
-    <div class="description"><%= project.description %></div>
-    <div class="action">
-      <%= link_to "Edit", edit_project_path(project), :remote => true %>
-      <%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete, :remote => true %>
-      <br/><br/>
-      <%= link_to 'User Stories', project_user_stories_path(project) %>
+
+
+<div class="span12 project-<%= project.id %>">
+  <div class="row">
+    <div class="span10">
+        <h2 class="title"><%= link_to project.title, project_user_stories_path(project) %></h2>
     </div>
-</li>
+    <div class="span2 velocity">
+      <h3><%= project.velocity %></h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span12 description">
+      <%= project.description %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="action span3 offset9">
+      <%= link_to "Edit", edit_project_path(project), :remote => true, :class => 'btn' %>
+      <%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete, :remote => true, :class => 'btn danger' %>
+    </div>
+  </div>
+</div>

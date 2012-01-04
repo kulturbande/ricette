@@ -3,7 +3,7 @@
 # Time: 11:16
 
 form = "<%= escape_javascript(render(:partial => 'form', :locals => { :project => @project }))%>"
-$("ul#projects li:last").after form
+$("div#item:last").after form
 create_form = $(".create-project")
 create_form.hide()
 
