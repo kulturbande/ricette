@@ -5,4 +5,4 @@
 app = new App("project")
 
 $(".project-<%= params[:id] %>").remove()
-app.notice('<%=escape_javascript(flash.discard(:notice)) %>')
+app.notice('<%=escape_javascript(flash.discard(:notice)) %>', 'success')

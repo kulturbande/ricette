@@ -1,24 +1,26 @@
 
 
-<div class="span12 project-<%= project.id %>">
+<div class="span12 project-<%= project.id %> project-item hover-action" data-hover-buttons="true">
   <div class="row">
-    <div class="span10">
+    <div class="span9">
         <h2 class="title"><%= link_to project.title, project_user_stories_path(project) %></h2>
     </div>
-    <div class="span2 velocity">
-      <h3><%= project.velocity %></h3>
+    <div class="span3 velocity">
+      <h3>Velocity: <%= project.velocity ? project.velocity : 0 %></h3>
     </div>
   </div>
 
   <div class="row">
-    <div class="span12 description">
-      <%= project.description %>
+    <div class="span12">
+      <div class="description"><%= project.description %></div>
     </div>
   </div>
   <div class="row">
-    <div class="action span3 offset9">
-      <%= link_to "Edit", edit_project_path(project), :remote => true, :class => 'btn' %>
-      <%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete, :remote => true, :class => 'btn danger' %>
+    <div class=" span3 offset9">
+      <div class="action">
+          <%= link_to "Edit", edit_project_path(project), :remote => true, :class => 'btn' %>
+          <%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete, :remote => true, :class => 'btn danger' %>
+      </div>
     </div>
   </div>
 </div>
