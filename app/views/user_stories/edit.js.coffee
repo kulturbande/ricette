@@ -4,7 +4,7 @@
 
 $(".user-story-form").remove()
 $("li").show()
-replacement = $(".user-story-<%= @user_story.id %>")
+replacement = $("#user-story-<%= @user_story.id %>")
 
 $(".create-user-story").show()
 

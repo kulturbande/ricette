@@ -1,17 +1,25 @@
 <% title "User Story - " + @project.title %>
-
-<section id="backlog">
-    <p class="inline-menu">
-      <%= link_to "Create new user story", new_project_user_story_path(@project), :remote => true, :class => "create-user-story" %>
-    </p>
-    <ul id="product">
+<div class="row">
+  <div class="span8">
+     <ul id="product" class="unstyled connectedSortable">
+        <%= render :partial => 'label', :locals => { :label => 'Product' } %>
       <% @product_backlog.each do |user_story| %>
         <%= render user_story %>
       <% end %>
     </ul>
-    <ul id="current">
+  </div>
+  <div class="span8">
+    <ul id="sprint" class="unstyled connectedSortable">
+      <%= render :partial => 'label', :locals => { :label => 'Sprint' } %>
       <% @current_backlog.each do |user_story| %>
         <%= render user_story %>
       <% end %>
     </ul>
-</section>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span16">
+    <%= link_to "Create new user story", new_project_user_story_path(@project), :remote => true, :class => "create-user-story btn" %>
+  </div>
+</div>

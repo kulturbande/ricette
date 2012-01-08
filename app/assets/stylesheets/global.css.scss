@@ -1,6 +1,7 @@
 // vars
 $default-background-color: whiteSmoke; // #eee;
-$padding: 10;
+$padding-horizotal: 10;
+$padding-vertical: 5;
 
 // mixin
 @mixin border_radius($radius:6) {
@@ -16,8 +17,8 @@ $padding: 10;
 }
 
 @mixin well-formed() {
-    padding-right: $padding+px;
-    padding-left: $padding+px;
+    padding-right: $padding-horizotal+px;
+    padding-left: $padding-horizotal+px;
 }
 
 @mixin layout-container() {
@@ -38,13 +39,17 @@ body {
 
 .hover-action .action {
     a, input {
-        display:none;
+        visibility:hidden;
+
     }
 }
 
-.hover-action:hover .action {
-    a, input {
-        display: inline;
+.hover-action:hover {
+    background-color: $default-background-color;
+    .action {
+        a, input {
+            visibility:visible;
+        }
     }
 }
 

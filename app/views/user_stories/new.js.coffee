@@ -1,5 +1,5 @@
 form = "<%= escape_javascript(render(:partial => 'form', :locals => { :user_story => @user_story }))%>"
-$("#backlog ul#product li:last").after form
+$("ul#product li:last").after form
 create_form = $(".create-user-story")
 create_form.hide()
 

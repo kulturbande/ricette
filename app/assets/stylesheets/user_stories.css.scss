@@ -1,0 +1,23 @@
+@import 'global';
+
+#product, #sprint {
+    @include layout-container();
+
+    li.list-label {
+        background-color: $default-background-color;
+        text-transform: uppercase;
+        padding-left: $padding-horizotal + px;
+    }
+
+    li.user-story-item {
+        border-bottom: 1px solid $default-background-color;
+        padding: $padding-vertical+px $padding-horizotal + px;
+    }
+}
+
+.user-story-form {
+
+    form {
+        padding-top: $padding-vertical+px;
+    }
+}

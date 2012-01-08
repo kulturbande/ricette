@@ -2,7 +2,6 @@
 
 .project-item {
     @include layout-container();
-    background-color: $default-background-color;
     padding-bottom: 5px;
 
     .title, .description {
@@ -14,7 +13,7 @@
     @include layout-container();
 
     form {
-        padding-top: $padding+px;
+        padding-top: $padding-vertical+px;
     }
     .actions, form {
         margin-bottom: 0px;

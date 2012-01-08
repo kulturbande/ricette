@@ -3,7 +3,8 @@
 # Time: 17:32
 
 $(".project-form").remove()
-$(".item").show()
+$(".project-item").show()
+$(".create-project").show()
 replacement = $(".project-<%= @project.id %>")
 
 form = "<%= escape_javascript(render(:partial => 'form', :locals => { :project => @project }))%>"
