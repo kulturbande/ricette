@@ -36,6 +36,19 @@ class UserStoriesController < ApplicationController
     end
   end
 
+  def sort
+    number = 0
+    params[:list].each do |item|
+      user_story = UserStory.find(item.gsub("user-story-","")) if item.length > 4
+      if user_story
+        user_story.position = number
+        user_story.backlog = params[:backlog]
+        user_story.save
+        number += 1
+      end
+    end
+  end
+
   private
   def load_project
     @project = Project.find(params[:project_id])
