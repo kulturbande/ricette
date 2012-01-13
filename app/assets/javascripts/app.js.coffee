@@ -33,16 +33,6 @@ window.App = class App
       $(element).remove()
       replacement.show()
 
-  #setup_hover_buttons: () ->
-  #  $('[data-hover-buttons] .action').hide()
-  #  $('[data-hover-buttons]').hover ->
-      #$(this + " .action").show()
-  #  ,->
-      #$(this).css("border","1px solid #000")
-    #$('.'+parent_name).children().hover ->
-    #  alert "test"
-
 jQuery ->
   app = new App("")
   app.setup_ajax_callbacks()
-  #app.setup_hover_buttons()

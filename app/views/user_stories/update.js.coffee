@@ -5,7 +5,7 @@ app = new App("user-story")
 <% if @user_story.errors.any? %>
 user_story_form.remove()
 replacement.after "<%= escape_javascript(render(:partial => 'form', :locals => { :user_story => @user_story }))%>"
-app.add_close_link(replacment)
+app.add_close_link(replacement)
 <% else %>
 app.notice("<%=escape_javascript(flash.discard(:notice)) %>", 'success')
 replacement.remove()
