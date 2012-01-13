@@ -1,21 +1,18 @@
 <% title "Tasks - " + @project.title %>
-<div class="row">
-  <div class="span16">
-    <table>
+
+    <table class="tasks">
       <tr>
-        <th>User Story</th>
-        <th>To Do</th>
-        <th>In Progress</th>
-        <th>Done</th>
-        <th></th>
+        <th class="user-story">User Story</th>
+        <th class="board-item">To Do</th>
+        <th class="board-item">In Progress</th>
+        <th class="board-item">Done</th>
+        <th class="action"></th>
       </tr>
       <% @tasks.each do |task| %>
         <%= render task %>
       <% end %>
 
     </table>
-  </div>
-</div>
 <div class="row">
   <div class="span16">
     <%= link_to "Create new task", new_project_task_path(@project), :remote => true, :class => "create-task btn" %>

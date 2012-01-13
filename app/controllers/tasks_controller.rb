@@ -36,6 +36,13 @@ class TasksController < ApplicationController
     end
   end
 
+  def next
+    @task = @project.tasks.find(params[:id])
+    if @task.next
+      @task.save
+    end
+  end
+
   private
   def load_project
     @project = Project.find(params[:project_id])

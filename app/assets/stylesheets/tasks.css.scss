@@ -1,0 +1,11 @@
+
+table.tasks {
+  width: 100%;
+  th.user-story {
+    width: 10%;
+  }
+
+  th.board-item, th.action {
+    width: 20%;
+  }
+}

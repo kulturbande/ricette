@@ -3,7 +3,9 @@ Ricette::Application.routes.draw do
   #get "user_story/index"
 
   resources :projects do
-    resources :tasks
+    resources :tasks do
+      get 'next', :on => :member
+    end
     resources :user_stories do
       post 'sort', :on => :collection
     end

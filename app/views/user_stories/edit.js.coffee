@@ -1,7 +1,3 @@
-# User: sascha
-# Date: 12.12.11
-# Time: 17:32
-
 $(".user-story-form").remove()
 $("li").show()
 replacement = $("#user-story-<%= @user_story.id %>")

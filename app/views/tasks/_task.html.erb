@@ -1,9 +1,10 @@
-<tr id="task-<%= task.id %>">
+<tr id="task-<%= task.id %>" class="hover-action">
   <td><%= truncate(task.user_story.story) %></td>
-  <td><%= task.task %></td>
-  <td></td>
-  <td></td>
-  <td>
+  <td><%= task.task if task.status == 'to_do' %></td>
+  <td><%= task.task if task.status == 'in_progress' %></td>
+  <td><%= task.task if task.status == 'done' %></td>
+  <td class="action">
+    <%= link_to("Next", next_project_task_path(@project, task), :remote => true, :class => 'btn info') unless task.status == 'done' %>
     <%= link_to "Edit", edit_project_task_path(@project, task), :remote => true, :class => 'btn' %>
     <%= link_to 'Destroy', [@project, task], :confirm => 'Are you sure?', :method => :delete, :remote => true, :class => 'btn danger' %>
   </td>
