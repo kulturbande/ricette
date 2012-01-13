@@ -6,7 +6,7 @@ class UserStory < ActiveRecord::Base
   validates_presence_of :story
   validates_presence_of :project_id
 
-  scope :product_backlog, where(:backlog => "product")
-  scope :sprint_backlog, where(:backlog => "sprint")
+  scope :product_backlog, where(:backlog => "product").order(:position)
+  scope :sprint_backlog, where(:backlog => "sprint").order(:position)
 
 end

@@ -1,18 +1,37 @@
-<li class="project-form">
+<div class="project-form span12">
   <%= form_for(project, :remote => true) do |f| %>
   <% if project.errors.any? %>
-    <ul>
       <% project.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <div class="alert-message error" data-alert="alert">
+            <a class="close" href="#">×</a>
+            <p><%= msg %></p>
+        </div>
       <% end %>
-    </ul>
   <% end %>
 
-    <h3 class="title"><%= f.label :title %><%= f.text_field :title %></h3>
-    <div class="description"><%= f.label :description %><%= f.text_area :description %></div>
-    <div class="action">
-      <%= f.submit %>
-      <%= link_to "Close", {}, {:class => "close-form"} %>
+  <div class="row">
+    <div class="span9">
+        <div class="clearfix">
+          <%= f.label :title %>
+          <div class="input"><%= f.text_field :title, {:class => "xxlarge"} %></div>
+        </div>
     </div>
-<% end %>
-</li>
+    <div class="span3 velocity">
+      <h3>Velocity: <%= project.velocity ? project.velocity : 0 %></h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span12 description">
+      <div class="clearfix">
+          <%= f.label :description %>
+          <div class="input"><%= f.text_area :description, {:rows => 3, :class => "xxlarge"} %></div>
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+      <%= f.submit :class =>"btn primary" %>
+      <%= link_to "Close", {}, :class => "close-form btn" %>
+  </div>
+  <% end %>
+</div>

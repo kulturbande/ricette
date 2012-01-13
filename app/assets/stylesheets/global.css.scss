@@ -1,16 +1,57 @@
-@import 'grid';
+// vars
+$default-background-color: whiteSmoke; // #eee;
+$padding-horizotal: 10;
+$padding-vertical: 5;
 
-div.center {
-    margin: 0 auto;
-    width: $total-width;
+// mixin
+@mixin border_radius($radius:6) {
+  -webkit-border-radius: $radius+px;
+     -moz-border-radius: $radius+px;
+          border-radius: $radius+px;
 }
 
-div.field_with_errors {
-     input, textarea {
-        border-color: #F00;
-     }
+@mixin border_shadow() {
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.075);
+     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.075);
+          box-shadow: 0 1px 2px rgba(0,0,0,.075);
 }
 
-// infield labels
-form p { position:relative }
-label  { position:absolute; top:0; left:0}
+@mixin well-formed() {
+    padding-right: $padding-horizotal+px;
+    padding-left: $padding-horizotal+px;
+}
+
+@mixin layout-container() {
+  border: 1px solid #ddd;
+  @include border_radius();
+  @include border_shadow();
+  margin: 10px 0;
+}
+
+// bootstrap default
+body {
+    padding-top: 60px;
+}
+
+#ajax-status {
+    display: none;
+}
+
+.hover-action .action {
+    a, input {
+        visibility:hidden;
+
+    }
+}
+
+.hover-action:hover {
+    background-color: $default-background-color;
+    .action {
+        a, input {
+            visibility:visible;
+        }
+    }
+}
+
+
+

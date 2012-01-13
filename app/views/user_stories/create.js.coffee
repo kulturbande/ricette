@@ -7,7 +7,7 @@ form = "<%= escape_javascript(render(:partial => 'form', :locals => { :user_stor
 $("ul#product li:last").after form
 app.add_close_link($(".create-user-story"))
 <% else %>
-app.notice('<%= escape_javascript(flash.discard(:notice)) %>')
+app.notice('<%= escape_javascript(flash.discard(:notice)) %>', 'success')
 user_story_form.after "<%= escape_javascript(render(@user_story))%>"
 user_story_form.remove()
 $(".create-user-story").show()

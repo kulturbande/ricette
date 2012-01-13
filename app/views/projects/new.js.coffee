@@ -2,8 +2,10 @@
 # Date: 14.12.11
 # Time: 11:16
 
+$(".project-form").remove()
+$(".project-item").show()
 form = "<%= escape_javascript(render(:partial => 'form', :locals => { :project => @project }))%>"
-$("ul#projects li:last").after form
+$("div.new").append form
 create_form = $(".create-project")
 create_form.hide()
 

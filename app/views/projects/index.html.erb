@@ -1,10 +1,12 @@
 <% title "Projects" %>
 
-<section>
-  <ul id="projects">
-  <% @projects.each do |project| %>
+<% @projects.each do |project| %>
+    <div class="row item">
     <%= render project %>
-  <% end %>
-  </ul>
-  <%= link_to "Create new project", new_project_path, :remote => true, :class => "create-project" %>
-</section>
+    </div>
+<% end %>
+<div class="row">
+  <div class="span16 new">
+    <%= link_to "Create new project", new_project_path, :remote => true, :class => "btn create-project" %>
+  </div>
+</div>

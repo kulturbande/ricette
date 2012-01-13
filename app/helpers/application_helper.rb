@@ -12,4 +12,10 @@ module ApplicationHelper
     content_for(:menu) { '<div id="menu">' + menu + '</div>' }
   end
 
+
+  def script_information(key, value)
+    values = content_for(:script_variables)
+    content_for(:script_variables) { values + raw('var '+key+' = "'+value+'";')}
+  end
+
 end
