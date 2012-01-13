@@ -1,0 +1,10 @@
+<tr id="task-<%= task.id %>">
+  <td><%= truncate(task.user_story.story) %></td>
+  <td><%= task.task %></td>
+  <td></td>
+  <td></td>
+  <td>
+    <%= link_to "Edit", edit_project_task_path(@project, task), :remote => true, :class => 'btn' %>
+    <%= link_to 'Destroy', [@project, task], :confirm => 'Are you sure?', :method => :delete, :remote => true, :class => 'btn danger' %>
+  </td>
+</tr>

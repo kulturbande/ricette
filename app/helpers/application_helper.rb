@@ -18,4 +18,13 @@ module ApplicationHelper
     content_for(:script_variables) { values + raw('var '+key+' = "'+value+'";')}
   end
 
+  def truncate(text, length = 30, truncate_string = "...")
+    if text
+      if text.length > length
+         text = text[0..length]+truncate_string
+      end
+    end
+    text
+  end
+
 end

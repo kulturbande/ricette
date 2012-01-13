@@ -1,0 +1,37 @@
+<tr class="task-form">
+  <td colspan="5">
+      <%= form_for([@project, task], :remote => true) do |f| %>
+          <% if task.errors.any? %>
+              <% task.errors.full_messages.each do |msg| %>
+                  <div class="alert-message error" data-alert="alert">
+                    <a class="close" href="#">×</a>
+                    <p><%= msg %></p>
+                  </div>
+              <% end %>
+          <% end %>
+
+          <div class="row">
+              <div class="span8">
+                  <div class="clearfix">
+                    <%= f.label :user_story %>
+                    <div class="input"><%= f.select :user_story_id, @project.user_stories.map { |h| [truncate(h.story, 50), h.id] } %></div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="span8">
+                  <div class="clearfix">
+                    <%= f.label :task %>
+                    <div class="input"><%= f.text_area :task, {:rows => 4, :cols => 40, :class => "xxlarge"} %></div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="actions">
+              <%= f.submit :class =>"btn primary" %>
+              <%= link_to "Close", {}, :class => "close-form btn" %>
+          </div>
+      <% end %>
+  </td>
+</tr>
